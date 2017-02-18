@@ -5,8 +5,9 @@ except ImportError:
 
 
 install_requires = [
-    "datadog-logger >= 0.2.0",
-    "kubernetes-downward-api >= 0.2.0"
+    "datadog-logger",
+    "kubernetes-downward-api",
+    "datadog"
 ]
 
 setup(name="ustack-logging",
