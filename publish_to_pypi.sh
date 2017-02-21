@@ -4,8 +4,6 @@ set -e
 
 is_package_installed() {
     python -c "import $1";
-
-    [ $? -eq 0 ];
 }
 
 die() {
