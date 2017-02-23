@@ -11,11 +11,12 @@ pip install ustack-logging
 ## Usage ##
 
 ```python
+import os
 from ustack_logging.logging_configuration import configure_logging
 
 
 def main():
-    configure_logging()
+    configure_logging(os.environ)
 
     # Run your application
 
