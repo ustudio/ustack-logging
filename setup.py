@@ -6,12 +6,12 @@ except ImportError:
 
 install_requires = [
     "datadog-logger",
-    "kubernetes-downward-api",
-    "datadog"
+    "datadog",
+    "kubernetes"
 ]
 
 setup(name="ustack-logging",
-      version="0.1.0",
+      version="0.2.0",
       description="Default logging configuration for uStack style Python applications.",
       url="https://github.com/ustudio/ustack-logging",
       packages=["ustack_logging"],
