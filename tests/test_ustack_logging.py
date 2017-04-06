@@ -31,7 +31,6 @@ class TestLogging(unittest.TestCase):
             data={
                 "environment": base64.b64encode("dev".encode("utf8")),
                 "datadog-api-key": base64.b64encode("dd-api-key".encode("utf8")),
-                "datadog-app-key": base64.b64encode("dd-app-key".encode("utf8"))
             })
         mock_k8s_api.read_namespaced_pod.return_value = V1Pod(
             metadata=V1ObjectMeta(labels={
@@ -53,7 +52,7 @@ class TestLogging(unittest.TestCase):
         mock_k8s_api.read_namespaced_secret.assert_called_once_with(
             "environment-info", "ustudio-system")
 
-        mock_dd_init.assert_called_once_with(api_key="dd-api-key", app_key="dd-app-key")
+        mock_dd_init.assert_called_once_with(api_key="dd-api-key")
 
         mock_open.assert_called_once_with("/var/run/secrets/kubernetes.io/serviceaccount/namespace")
 

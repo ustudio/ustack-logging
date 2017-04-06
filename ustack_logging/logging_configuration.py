@@ -18,8 +18,7 @@ def configure_logging():
         environment_info = core_api.read_namespaced_secret("environment-info", "ustudio-system")
 
         datadog.initialize(
-            api_key=base64.b64decode(environment_info.data["datadog-api-key"]).decode("utf8"),
-            app_key=base64.b64decode(environment_info.data["datadog-app-key"]).decode("utf8"))
+            api_key=base64.b64decode(environment_info.data["datadog-api-key"]).decode("utf8"))
 
         with open("/var/run/secrets/kubernetes.io/serviceaccount/namespace") as f:
             namespace = f.read()

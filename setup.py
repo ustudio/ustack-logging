@@ -11,7 +11,7 @@ install_requires = [
 ]
 
 setup(name="ustack-logging",
-      version="0.2.0",
+      version="0.2.1",
       description="Default logging configuration for uStack style Python applications.",
       url="https://github.com/ustudio/ustack-logging",
       packages=["ustack_logging"],
