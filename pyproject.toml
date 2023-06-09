@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "ustack-logging"
-version = "0.2.1"
+version = "1.0.0"
 description = "Default logging configuration for uStack style Python applications."
 authors = ["uStudio Developers <dev@ustudio.com>"]
 license = "MIT"
