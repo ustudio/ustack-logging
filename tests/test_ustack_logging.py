@@ -4,10 +4,7 @@ import unittest
 
 from kubernetes.client import V1Secret, V1Pod, V1ObjectMeta
 
-try:
-    from unittest import mock
-except ImportError:
-    import mock
+from unittest import mock
 
 from ustack_logging.logging_configuration import configure_logging
 
@@ -20,8 +17,14 @@ class TestLogging(unittest.TestCase):
     @mock.patch("datadog.initialize", autospec=True)
     @mock.patch("logging.basicConfig", autospec=True)
     def test_configures_logging_format_and_logs_errors_to_datadog(
-            self, mock_log_config, mock_dd_init, mock_log_errors, mock_k8s_api_class,
-            mock_k8s_config, mock_gethostname):
+        self,
+        mock_log_config: mock.Mock,
+        mock_dd_init: mock.Mock,
+        mock_log_errors: mock.Mock,
+        mock_k8s_api_class: mock.Mock,
+        mock_k8s_config: mock.Mock,
+        mock_gethostname: mock.Mock
+    ) -> None:
 
         mock_k8s_api = mock_k8s_api_class.return_value
 
@@ -65,7 +68,11 @@ class TestLogging(unittest.TestCase):
 
     @mock.patch("kubernetes.config.load_incluster_config")
     @mock.patch("logging.basicConfig", autospec=True)
-    def test_ignores_errors_from_datadog_initialization(self, mock_log_config, mock_k8s_config):
+    def test_ignores_errors_from_datadog_initialization(
+        self,
+        mock_log_config: mock.Mock,
+        mock_k8s_config: mock.Mock
+    ) -> None:
 
         mock_k8s_config.side_effect = RuntimeError
 
