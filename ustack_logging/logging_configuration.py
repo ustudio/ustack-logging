@@ -2,11 +2,12 @@ import base64
 import datadog
 from datadog_logger import log_error_events
 import kubernetes.client
+import kubernetes.config
 import logging
 import socket
 
 
-def configure_logging():
+def configure_logging() -> None:
     logging.basicConfig(
         format="%(asctime)s %(levelname)s:%(module)s:%(message)s",
         datefmt="%Y-%m-%d %H:%M:%S%z", level=logging.INFO)
@@ -33,5 +34,5 @@ def configure_logging():
             "service:{0}".format(namespace),
             "role:{0}".format(pod_info.metadata.labels["role"])
         ])
-    except:
+    except Exception:
         logging.warning("Could not initialize DataDog error logging, with error:", exc_info=True)
