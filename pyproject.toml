@@ -9,9 +9,9 @@ packages = [{include = "ustack_logging"}]
 
 [tool.poetry.dependencies]
 python = "^3.9"
-datadog-logger = "^1.0.0"
-datadog = "^0.45.0"
-kubernetes = "^26.1.0"
+datadog-logger = "^1.0.1"
+datadog = ">=0.45.0"
+kubernetes = ">=26.1.0"
 
 [tool.poetry.group.dev.dependencies]
 pytest = "^7.3.1"
