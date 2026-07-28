@@ -1,6 +1,6 @@
 [project]
 name = "ustack-logging"
-version = "1.0.1"
+version = "1.0.2"
 description = "Default logging configuration for uStack style Python applications."
 authors = [{name = "uStudio Developers", email = "dev@ustudio.com"}]
 license = "MIT"
