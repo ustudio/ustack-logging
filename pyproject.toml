@@ -1,11 +1,11 @@
 [project]
 name = "ustack-logging"
-version = "1.0.2"
+version = "1.0.3"
 description = "Default logging configuration for uStack style Python applications."
 authors = [{name = "uStudio Developers", email = "dev@ustudio.com"}]
 license = "MIT"
 readme = "README.md"
-requires-python = ">=3.10,<4"
+requires-python = ">=3.11,<4"
 dynamic = ["dependencies"]
 
 [tool.poetry]
@@ -19,8 +19,8 @@ kubernetes = ">=26.1.0"
 
 [tool.poetry.group.dev.dependencies]
 pytest = "^9.1.1"
-flake8 = "^7.3.0"
-mypy = "^2.3.0"
+flake8 = "^7.4.1"
+mypy = "^2.4.0"
 
 [build-system]
 requires = ["poetry-core"]
